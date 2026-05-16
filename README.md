@@ -35,12 +35,14 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r text2sql/requirements.txt
 cp text2sql/.env.example text2sql/.env
-python -c "from text2sql.chatbot import Chatbot; print(Chatbot().chat('统计最近30天订单数'))"
+python text2sql/scripts/run_demo.py --show-config --disable-rag "统计最近30天订单数"
 ```
+
+The demo script preloads `text2sql/.env`, so it does not depend on your current
+working directory when resolving settings.
 
 ## Current Gaps
 
 - The repository does not currently include database bootstrap SQL.
-- There is no checked-in demo script under `scripts/`.
 - A working RAG flow still requires a populated `knowledge_base/` and reachable
   embedding / rerank endpoints.
