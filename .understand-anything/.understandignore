@@ -1,0 +1,12 @@
+# Exclude local runtime noise from future graph rebuilds.
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+outputs/
+.understand-anything/*
+.understand-anything/intermediate/
+.understand-anything/tmp/
+docs/prac.ipynb
+test_config.py
